@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".TipCalcActivity" >
+
+    <!--
+        android:layout_below="@+id/lvItems"
+        android:layout_toRightOf="@+id/etNewItem"
+        android:onClick="addToDoItem"
+    -->
+
+    <Button
+        android:id="@+id/btnTenPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etEnterAmount"
+        android:layout_centerVertical="true"
+        android:onClick="tipCalc"
+        android:tag="0.10"
+        android:text="@string/ten_percent" />
+
+    <Button
+        android:id="@+id/btnTwentyPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnFifteenPercent"
+        android:layout_alignBottom="@+id/btnFifteenPercent"
+        android:layout_alignRight="@+id/etEnterAmount"
+        android:onClick="tipCalc"
+        android:tag="0.20"
+        android:text="@string/twenty_percent" />
+
+    <EditText
+        android:id="@+id/etEnterAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnTenPercent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:digits="0123456789."
+        android:ems="10"
+        android:hint="@string/enter_bill_amount"
+        android:inputType="numberDecimal" >
+    </EditText>
+
+    <Button
+        android:id="@+id/btnFifteenPercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvTipAmount"
+        android:layout_centerHorizontal="true"
+        android:onClick="tipCalc"
+        android:tag="0.15"
+        android:text="@string/fifteen_percent" />
+
+    <TextView
+        android:id="@+id/Persistent"
+        android:layout_width="110dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/tvTipAmount"
+        android:layout_alignLeft="@+id/btnTenPercent"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:text="@string/total_tip_due" />
+
+    <TextView
+        android:id="@+id/tvTipAmount"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/btnTenPercent"
+        android:layout_marginTop="31dp"
+        android:layout_toRightOf="@+id/Persistent"
+        android:ems="10" />
+
+    <android.support.v7.widget.GridLayout
+        android:id="@+id/gridLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etEnterAmount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="53dp" />
+
+</RelativeLayout>
